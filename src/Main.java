@@ -1,13 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int birthMonth = 0;
+
+        // Ask the user to enter their birth month (1-12)
+        System.out.print("Enter your birth month (1-12): ");
+        if (in.hasNextInt()) {
+            birthMonth = in.nextInt();
+
+            // Check if input is in range
+            if (birthMonth >= 1 && birthMonth <= 12) {
+                System.out.println("Your birth month is: " + birthMonth);
+            } else {
+                // Output error message for out of range values
+                System.out.println("You entered an incorrect month value: " + birthMonth);
+            }
+        } else {
+            System.out.println("Invalid input. Please enter an integer.");
+        }
+    }
 }
